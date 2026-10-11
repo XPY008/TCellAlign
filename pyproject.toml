@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tc-norm"
+version = "0.1.0"
+description = "Lightweight research workspace for paper-local T-cell label normalization."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "anndata",
+  "cellxgene-census>=1.17",
+  "matplotlib",
+  "numpy",
+  "openai>=2.0",
+  "openai-agents>=0.14.1",
+  "openpyxl>=3.1",
+  "pandas>=2.0",
+  "pdfplumber>=0.11.9",
+  "pydantic>=2.0",
+  "pymupdf>=1.27.2.3",
+  "pypdf>=6.0",
+  "questionary>=2.1",
+  "rich>=14.0",
+  "scanpy",
+  "scikit-learn",
+  "scipy>=1.10",
+  "seaborn",
+]
+
+[project.scripts]
+tc-norm = "CLI.main:main"
+
+[tool.setuptools.packages.find]
+include = ["CLI*", "workflow*", "evaluation*", "experiment*"]
+
+[tool.setuptools.package-data]
+"workflow.search_agent" = ["prompt.md"]
+"workflow.ie_agent" = ["prompt.md"]
+"workflow.mapping_agent" = ["prompt.md"]
+"workflow.judge_agent" = ["prompt.md"]

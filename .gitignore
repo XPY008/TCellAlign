@@ -1,0 +1,16 @@
+llm.json
+.env
+.env.*
+data/
+data-test/
+results/
+logs/
+tmp/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/
+.DS_Store
